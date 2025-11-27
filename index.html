@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Ahmed Sheref | Portfolio</title>
+    <meta
+      name="description"
+      content="Ahmed Sheref — Backend Developer & Designer. Portfolio, Projects, Services, Contact."
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="brand" href="#">Ahmed <span>Sheref</span></a>
+        <nav class="nav">
+          <button
+            id="menuBtn"
+            class="menu-btn"
+            aria-expanded="false"
+            aria-label="Toggle menu"
+          >
+            <i class="fas fa-bars"></i>
+          </button>
+          <ul id="navLinks" class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Portfolio</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#articles">Articles</a></li>
+            <li><a href="#contact" class="btn-cta">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section id="home" class="hero">
+        <div class="wrap hero-inner">
+          <div class="hero-left">
+            <div class="kicker">CREATIVE</div>
+            <h1 class="hero-title">
+              CREATIVE<br />
+              <span>DEVELOPER</span>
+            </h1>
+            <p class="hero-sub">
+              Full-stack backend developer & designer. Node.js • APIs • Data
+              Analysis
+            </p>
+            <div class="hero-actions">
+              <a class="btn" href="#projects">View Portfolio</a>
+              <a class="btn ghost" href="#contact">Get In Touch</a>
+            </div>
+          </div>
+
+          <div class="hero-center">
+            <div class="silhouette" aria-hidden="true">
+              <img
+                src="/IMG_20251127_203227_720.jpg"
+                alt="Ahmed Sheref"
+                class="hero-image"
+              />
+            </div>
+            <div class="hero-meta">
+              <div class="meta-row"><strong>Follow</strong> @ahmedsheref</div>
+              <div class="meta-row"><strong>Based</strong> Dokki, Giza</div>
+              <div class="meta-row">
+                <strong>Role</strong> Backend Developer
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about" class="section">
+        <div class="wrap">
+          <h2 class="section-title">About Me</h2>
+          <div class="about-grid">
+            <div class="about-text">
+              <h3>I'm Ahmed — Backend Developer & Problem Solver</h3>
+              <p>
+                Third-year Computer Science student at Cairo University
+                specializing in Information Systems. Experienced in Node.js
+                backends, database design, algorithms and competitive
+                programming (ECPC). I build maintainable APIs and systems
+                optimized for scale and performance.
+              </p>
+              <ul class="about-stats">
+                <li><strong>Backend</strong><span>Node.js • Express</span></li>
+                <li><strong>Databases</strong><span>MongoDB • SQL</span></li>
+                <li>
+                  <strong>Competitive</strong><span>ECPC Solutions • C++</span>
+                </li>
+              </ul>
+            </div>
+            <div class="about-cv">
+              <div class="cv-card">
+                <h4>Selected Projects</h4>
+                <div class="cv-item">
+                  <div>Car Insurance System</div>
+                  <div class="tag">Node.js</div>
+                </div>
+                <div class="cv-item">
+                  <div>Financial Manager</div>
+                  <div class="tag">SQL</div>
+                </div>
+                <div class="cv-item">
+                  <div>ECPC Solutions</div>
+                  <div class="tag">C++</div>
+                </div>
+                <a
+                  class="btn small"
+                  href="https://github.com/Ahmed-Sheref"
+                  target="_blank"
+                  rel="noopener"
+                  >Explore GitHub</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS / PORTFOLIO -->
+      <section id="projects" class="projects-section">
+        <div class="wrap">
+          <div class="section-head">
+            <h2 class="section-title">Portfolio</h2>
+            <a
+              class="btn"
+              href="https://github.com/Ahmed-Sheref"
+              target="_blank"
+              rel="noopener"
+              >Explore More →</a
+            >
+          </div>
+
+          <div class="projects-grid">
+            <article class="project-card">
+              <div class="icon"><i class="fas fa-car"></i></div>
+              <h3>Car Insurance System</h3>
+              <p>
+                Manage policies, claims and renewals with a RESTful backend.
+              </p>
+              <div class="techs">
+                <span>Node.js</span><span>Express</span><span>MongoDB</span>
+              </div>
+              <a class="btn ghost" href="#">View Project</a>
+            </article>
+
+            <article class="project-card">
+              <div class="icon"><i class="fas fa-chart-line"></i></div>
+              <h3>Financial Manager</h3>
+              <p>Analytics and tools to track personal finances and budgets.</p>
+              <div class="techs">
+                <span>JavaScript</span><span>SQL</span><span>Analysis</span>
+              </div>
+              <a class="btn ghost" href="#">View Project</a>
+            </article>
+
+            <article class="project-card">
+              <div class="icon"><i class="fas fa-code"></i></div>
+              <h3>ECPC Solutions</h3>
+              <p>Competitive programming solutions and algorithm library.</p>
+              <div class="techs">
+                <span>C++</span><span>DS</span><span>Algorithms</span>
+              </div>
+              <a class="btn ghost" href="#">View Project</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- SERVICES -->
+      <section id="services" class="services-section">
+        <div class="wrap">
+          <h2 class="section-title">Provided Services</h2>
+          <div class="services-grid">
+            <div class="service-card">
+              <i class="fas fa-server"></i>
+              <h4>API Development</h4>
+              <p>Robust REST & GraphQL APIs.</p>
+            </div>
+            <div class="service-card">
+              <i class="fas fa-database"></i>
+              <h4>Database Design</h4>
+              <p>Optimized schemas & queries.</p>
+            </div>
+            <div class="service-card">
+              <i class="fas fa-tools"></i>
+              <h4>System Design</h4>
+              <p>Scalable architecture & patterns.</p>
+            </div>
+            <div class="service-card">
+              <i class="fas fa-bolt"></i>
+              <h4>Performance</h4>
+              <p>Profiling & optimization.</p>
+            </div>
+            <div class="service-card">
+              <i class="fas fa-shield-alt"></i>
+              <h4>Security</h4>
+              <p>Secure coding & auditing.</p>
+            </div>
+            <div class="service-card">
+              <i class="fas fa-code"></i>
+              <h4>Code Review</h4>
+              <p>Quality checks & refactors.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TESTIMONIALS -->
+      <section class="testimonials-section">
+        <div class="wrap">
+          <h2 class="section-title">Testimonials</h2>
+          <div class="test-grid">
+            <div class="test-box">
+              <blockquote>
+                "Ahmed exceeded expectations: professional, innovative,
+                detail-oriented."
+              </blockquote>
+              <div class="author">— Jane Doe, XYZ Company</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-number">66</div>
+              <div class="stat-label">Projects Completed</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- WORK PROCESS -->
+      <section class="process-section">
+        <div class="wrap">
+          <h2 class="section-title">Work Process</h2>
+          <div class="accordion">
+            <div class="acc-item">
+              <button class="acc-toggle" aria-expanded="false">
+                1. Consultation
+              </button>
+              <div class="acc-panel">
+                <ul>
+                  <li>Understand requirements</li>
+                  <li>Define scope & timeline</li>
+                  <li>Choose stack & architecture</li>
+                </ul>
+              </div>
+            </div>
+            <div class="acc-item">
+              <button class="acc-toggle" aria-expanded="false">
+                2. Planning
+              </button>
+              <div class="acc-panel">
+                <ul>
+                  <li>Specs & database design</li>
+                  <li>API contracts & mockups</li>
+                  <li>Project plan</li>
+                </ul>
+              </div>
+            </div>
+            <div class="acc-item">
+              <button class="acc-toggle" aria-expanded="false">
+                3. Development
+              </button>
+              <div class="acc-panel">
+                <ul>
+                  <li>API & backend</li>
+                  <li>Integration & testing</li>
+                  <li>Documentation</li>
+                </ul>
+              </div>
+            </div>
+            <div class="acc-item">
+              <button class="acc-toggle" aria-expanded="false">
+                4. Testing & Deployment
+              </button>
+              <div class="acc-panel">
+                <ul>
+                  <li>Functional & performance tests</li>
+                  <li>Deploy & monitor</li>
+                  <li>Support & maintenance</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ARTICLES -->
+      <section id="articles" class="articles-section">
+        <div class="wrap">
+          <div class="section-head">
+            <h2 class="section-title">Articles On Development</h2>
+            <a class="btn" href="#">Explore More →</a>
+          </div>
+
+          <div class="articles-grid">
+            <article class="article-card">
+              <h3>Backend Development Best Practices</h3>
+              <div class="meta">8 Feb 2024 • 7 min read</div>
+              <p>
+                Essentials for building scalable backend systems with Node.js.
+              </p>
+              <a class="read-more" href="#">Read More</a>
+            </article>
+
+            <article class="article-card">
+              <h3>Database Optimization Techniques</h3>
+              <div class="meta">1 Feb 2024 • 5 min read</div>
+              <p>How to optimize queries and schema for performance.</p>
+              <a class="read-more" href="#">Read More</a>
+            </article>
+
+            <article class="article-card">
+              <h3>Problem Solving in Programming</h3>
+              <div class="meta">27 Jan 2024 • 8 min read</div>
+              <p>Strategies to approach complex algorithmic problems.</p>
+              <a class="read-more" href="#">Read More</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="contact-section">
+        <div class="wrap contact-wrap">
+          <h2 class="section-title">Get In Touch</h2>
+          <div class="contact-grid">
+            <div class="contact-info">
+              <div class="ci">
+                <i class="fas fa-phone"></i>
+                <div>
+                  <strong>Phone</strong>
+                  <p>+201091575793</p>
+                </div>
+              </div>
+              <div class="ci">
+                <i class="fas fa-envelope"></i>
+                <div>
+                  <strong>Email</strong>
+                  <p>ahmedsheref395@gmail.com</p>
+                </div>
+              </div>
+              <div class="ci">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                  <strong>Location</strong>
+                  <p>Dokki, Giza, Egypt</p>
+                </div>
+              </div>
+              <div class="social-small">
+                <a
+                  href="https://github.com/Ahmed-Sheref"
+                  target="_blank"
+                  rel="noopener"
+                  ><i class="fab fa-github"></i
+                ></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+              </div>
+            </div>
+
+            <div class="contact-form">
+              <form id="contactForm">
+                <label for="name">Your Name</label>
+                <input id="name" type="text" required />
+                <label for="email">Your Email</label>
+                <input id="email" type="email" required />
+                <label for="message">Message</label>
+                <textarea id="message" rows="5" required></textarea>
+                <button class="btn" type="submit">Send Message</button>
+                <p id="formFeedback" class="feedback" aria-live="polite"></p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap footer-inner">
+        <div class="left">
+          <a class="brand" href="#">Ahmed <span>Sheref</span></a>
+          <p>© <span id="year"></span> Ahmed Sheref. All Rights Reserved.</p>
+        </div>
+        <div class="right">
+          <div class="social-small">
+            <a
+              href="https://github.com/Ahmed-Sheref"
+              target="_blank"
+              rel="noopener"
+              ><i class="fab fa-github"></i
+            ></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
