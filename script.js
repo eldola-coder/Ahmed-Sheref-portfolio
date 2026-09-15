@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Sections to observe
   const sections = document.querySelectorAll(
-    ".projects-section, .services-section, .testimonials-section, .process-section, .articles-section, .contact-section, #about"
+    ".projects-section, .services-section, .experience-section, .process-section, .contact-section, #about, .certificates-section"
   );
 
   sections.forEach((section) => {
@@ -269,7 +269,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Contact form with enhanced feedback
+  // Contact form: open the visitor's email client instead of showing a fake success state
   const form = document.getElementById("contactForm");
   const feedback = document.getElementById("formFeedback");
 
@@ -277,7 +277,6 @@ document.addEventListener("DOMContentLoaded", function () {
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       feedback.textContent = "";
-      feedback.style.color = "var(--accent)";
 
       const name = document.getElementById("name").value.trim();
       const email = document.getElementById("email").value.trim();
@@ -291,43 +290,11 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
 
-      // Simulate send with loading animation
-      const submitBtn = form.querySelector('button[type="submit"]');
-      const originalText = submitBtn.textContent;
-
-      submitBtn.textContent = "Sending...";
-      submitBtn.disabled = true;
-      submitBtn.style.opacity = "0.7";
-
-      feedback.textContent = "Sending message...";
-
-      setTimeout(() => {
-        feedback.textContent = "Thanks — your message was sent successfully!";
-        feedback.style.color = "#51cf66";
-        form.reset();
-
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-        submitBtn.style.opacity = "1";
-
-        // Add celebration effect
-        const confetti = document.createElement("div");
-        confetti.style.position = "fixed";
-        confetti.style.top = "50%";
-        confetti.style.left = "50%";
-        confetti.style.transform = "translate(-50%, -50%)";
-        confetti.style.fontSize = "3rem";
-        confetti.style.zIndex = "1000";
-        confetti.textContent = "🎉";
-        confetti.style.animation = "bounce 1s ease";
-
-        document.body.appendChild(confetti);
-
-        setTimeout(() => {
-          confetti.style.animation = "fadeOut 0.5s ease forwards";
-          setTimeout(() => confetti.remove(), 500);
-        }, 1000);
-      }, 1500);
+      const subject = encodeURIComponent(`Portfolio message from ${name}`);
+      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
+      feedback.textContent = "Opening your email app…";
+      feedback.style.color = "var(--accent)";
+      window.location.href = `mailto:AhmedShAlhadad1@gmail.com?subject=${subject}&body=${body}`;
     });
   }
 
@@ -377,6 +344,123 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       }
     });
+  });
+
+
+
+  // Project details modal
+  const projectDetails = {
+    natours: {
+      title: "Natours — Tour Booking Platform",
+      date: "Sep 2026",
+      type: "Node.js Backend",
+      image: "assets/natours-cover.png",
+      summary: "A full-featured tour booking backend covering tours, users, reviews, authentication, bookings, payments, image processing, email workflows, and advanced API operations.",
+      highlights: [
+        "Built RESTful APIs with Node.js, Express.js, MongoDB, and Mongoose for tours, users, reviews, authentication, and booking workflows.",
+        "Implemented JWT authentication, role-based authorization, password reset, data validation, protected routes, and centralized error handling.",
+        "Added filtering, sorting, pagination, aggregation pipelines, database indexing, and geospatial queries.",
+        "Implemented Multer + Sharp image processing, Nodemailer/Pug email workflows, Stripe Checkout, and webhook verification."
+      ],
+      tech: ["Node.js", "Express.js", "MongoDB", "Mongoose", "JWT", "Stripe", "Sharp"],
+      links: [
+        ["GitHub", "https://github.com/Ahmed-Sheref/natours", "fab fa-github"],
+        ["Live Demo", "https://natours-coral-tau.vercel.app/", "fas fa-arrow-up-right-from-square"],
+        ["Backend", "https://natours-ssy8.onrender.com", "fas fa-server"]
+      ]
+    },
+    ticktick: {
+      title: "TickTick Extension",
+      date: "Jan – Mar 2026",
+      type: "Chrome Extension + Backend",
+      image: "assets/ticktick-cover.jpg",
+      summary: "A Chrome extension and backend system for saving articles, generating AI summaries, organizing content, and turning saved knowledge into something useful. Currently used by 320 users.",
+      highlights: [
+        "Built a Chrome extension workflow for saving web content and keeping it organized inside the product.",
+        "Integrated AI summaries, smart tags, and quiz generation to help users retain what they save.",
+        "Connected the backend with MongoDB, authentication, and automated workflows for saved content and reminders.",
+        "Published the extension to the Chrome Web Store, where it is currently used by 320 users."
+      ],
+      tech: ["Chrome Extension", "Node.js", "Express.js", "MongoDB", "Groq API", "OAuth2"],
+      links: [["GitHub", "https://github.com/Ahmed-Sheref/TickTick_Extension", "fab fa-github"], ["Chrome Store", "https://chromewebstore.google.com/detail/akdjbmlbghlajjfjoijoagmilnllfmoe?utm_source=item-share-cb", "fas fa-store"]]
+    },
+    insurance: {
+      title: "Car Insurance System",
+      date: "Jan 2026",
+      type: "Backend + SQL Server",
+      image: "assets/car-insurance-cover.png",
+      summary: "A modular backend system for insurance operations, including customers, vehicles, policies, accident reports, claims, and payment workflows.",
+      highlights: [
+        "Designed RESTful APIs for core insurance workflows and relational data operations.",
+        "Implemented JWT authentication, role-based authorization, Google OAuth, validation, file uploads, and centralized error handling.",
+        "Integrated SQL Server for relational application data.",
+        "Documented backend endpoints with Swagger/OpenAPI."
+      ],
+      tech: ["Node.js", "Express.js", "SQL Server", "JWT", "Google OAuth", "Swagger/OpenAPI"],
+      links: [["GitHub", "https://github.com/Ahmed-Sheref/Car-Insurance-System-BackEnd_Node.js", "fab fa-github"]]
+    },
+    restaurant: {
+      title: "Restaurant Ordering System",
+      date: "Oct 2025",
+      type: "Java + Design Patterns",
+      image: "assets/restaurant-cover.jpg",
+      summary: "A console-based restaurant ordering system built with Java and object-oriented programming principles, structured for extensibility through reusable design patterns.",
+      highlights: [
+        "Created extensible modules for menus, discounts, payment methods, and order workflows.",
+        "Applied object-oriented design to keep responsibilities separated and maintainable.",
+        "Used software design patterns including Facade, Strategy, Observer, and Decorator in the project structure."
+      ],
+      tech: ["Java", "OOP", "Facade", "Strategy", "Observer", "Decorator"],
+      links: [["GitHub", "https://github.com/Ahmed-Sheref/Restaurant-App", "fab fa-github"]]
+    }
+  };
+
+  const projectModal = document.getElementById("projectModal");
+  const modalTitle = document.getElementById("projectModalTitle");
+  const modalImage = document.getElementById("projectModalImage");
+  const modalDate = document.getElementById("projectModalDate");
+  const modalType = document.getElementById("projectModalType");
+  const modalSummary = document.getElementById("projectModalSummary");
+  const modalHighlights = document.getElementById("projectModalHighlights");
+  const modalTech = document.getElementById("projectModalTech");
+  const modalLinks = document.getElementById("projectModalLinks");
+  let lastModalTrigger = null;
+
+  function openProjectModal(key, trigger) {
+    const project = projectDetails[key];
+    if (!project || !projectModal) return;
+    lastModalTrigger = trigger || null;
+    modalTitle.textContent = project.title;
+    modalImage.src = project.image;
+    modalImage.alt = `${project.title} project cover`;
+    modalDate.textContent = project.date;
+    modalType.textContent = project.type;
+    modalSummary.textContent = project.summary;
+    modalHighlights.innerHTML = project.highlights.map((item) => `<li>${item}</li>`).join("");
+    modalTech.innerHTML = project.tech.map((item) => `<span>${item}</span>`).join("");
+    modalLinks.innerHTML = project.links.map(([label, href, icon], index) =>
+      `<a class="btn ${index === 0 ? "ghost" : ""}" href="${href}" target="_blank" rel="noopener"><i class="${icon}"></i> ${label}</a>`
+    ).join("");
+    projectModal.classList.add("is-open");
+    projectModal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("modal-open");
+    projectModal.querySelector(".project-modal-close")?.focus();
+  }
+
+  function closeProjectModal() {
+    if (!projectModal?.classList.contains("is-open")) return;
+    projectModal.classList.remove("is-open");
+    projectModal.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("modal-open");
+    lastModalTrigger?.focus();
+  }
+
+  document.querySelectorAll(".project-details-btn").forEach((button) => {
+    button.addEventListener("click", () => openProjectModal(button.dataset.project, button));
+  });
+  projectModal?.querySelectorAll("[data-modal-close]").forEach((el) => el.addEventListener("click", closeProjectModal));
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeProjectModal();
   });
 
   // Typewriter effect for hero text (REMOVED TO FIX ISSUE)
