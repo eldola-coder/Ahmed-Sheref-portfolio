@@ -1,262 +1,483 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <title>Ahmed Sheref | Backend Developer &amp; Software Engineering Student</title>
-<meta content="Ahmed Sheref is a backend-focused software developer building secure REST APIs and scalable systems with Node.js, Express.js, MongoDB, SQL, and MEAN Stack technologies." name="description"/>
+<meta content="Ahmed Sheref is a backend-focused software developer building secure REST APIs and scalable systems with Node.js, Express.js, MongoDB, SQL, Azure VM, and GitHub Actions." name="description"/>
 <link href="style.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&amp;display=swap" rel="stylesheet"/>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
-<meta content="Ahmed Sheref" name="author"/><meta content="index, follow" name="robots"/><meta content="#0f1113" name="theme-color"/><link href="https://ahmed-sheref-portfolio.vercel.app/" rel="canonical"/><link href="assets/favicon.svg" rel="icon" type="image/svg+xml"/><meta content="website" property="og:type"/><meta content="Ahmed Sheref | Backend Developer" property="og:title"/><meta content="Backend-focused Software Developer specializing in Node.js, Express.js, MongoDB, SQL, REST APIs, and MEAN Stack development." property="og:description"/><meta content="https://ahmed-sheref-portfolio.vercel.app/" property="og:url"/><meta content="https://ahmed-sheref-portfolio.vercel.app/assets/natours-cover.png" property="og:image"/><meta content="summary_large_image" name="twitter:card"/><meta content="Ahmed Sheref | Backend Developer" name="twitter:title"/><meta content="Node.js, Express.js, MongoDB, SQL, REST APIs, and MEAN Stack development." name="twitter:description"/><meta content="https://ahmed-sheref-portfolio.vercel.app/assets/natours-cover.png" name="twitter:image"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Ahmed Sheref", "url": "https://ahmed-sheref-portfolio.vercel.app/", "jobTitle": "Backend Developer", "email": "mailto:AhmedShAlhadad1@gmail.com", "address": {"@type": "PostalAddress", "addressLocality": "Giza", "addressCountry": "EG"}, "affiliation": {"@type": "CollegeOrUniversity", "name": "Cairo University"}, "sameAs": ["https://github.com/Ahmed-Sheref", "https://linkedin.com/in/ahmed-sheref-profile", "https://codeforces.com/profile/ahmedsheref2288"], "knowsAbout": ["Node.js", "Express.js", "MongoDB", "SQL", "REST APIs", "Angular", "TypeScript"]}</script></head>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+
+<meta content="Ahmed Sheref" name="author"/>
+<meta content="index, follow" name="robots"/>
+<meta content="#0c1016" name="theme-color"/>
+<link href="https://ahmed-sheref-portfolio.vercel.app/" rel="canonical"/>
+<link href="assets/favicon.svg" rel="icon" type="image/svg+xml"/>
+<meta content="website" property="og:type"/>
+<meta content="Ahmed Sheref | Backend Developer" property="og:title"/>
+<meta content="Backend-focused Software Developer specializing in Node.js, Express.js, MongoDB, SQL, REST APIs, and MEAN Stack development." property="og:description"/>
+<meta content="https://ahmed-sheref-portfolio.vercel.app/" property="og:url"/>
+<meta content="https://ahmed-sheref-portfolio.vercel.app/assets/natours-cover.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Ahmed Sheref | Backend Developer" name="twitter:title"/>
+<meta content="Node.js, Express.js, MongoDB, SQL, REST APIs, and MEAN Stack development." name="twitter:description"/>
+<meta content="https://ahmed-sheref-portfolio.vercel.app/assets/natours-cover.png" name="twitter:image"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Ahmed Sheref", "url": "https://ahmed-sheref-portfolio.vercel.app/", "jobTitle": "Backend Developer", "email": "mailto:AhmedShAlhadad1@gmail.com", "address": {"@type": "PostalAddress", "addressLocality": "Giza", "addressCountry": "EG"}, "affiliation": {"@type": "CollegeOrUniversity", "name": "Cairo University"}, "sameAs": ["https://github.com/Ahmed-Sheref", "https://linkedin.com/in/ahmed-sheref-profile", "https://codeforces.com/profile/ahmedsheref2288"], "knowsAbout": ["Node.js", "Express.js", "MongoDB", "SQL", "REST APIs", "Angular", "TypeScript"]}</script>
+</head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header">
-<div class="wrap">
-<a class="brand" href="#home">Ahmed <span>Sheref</span></a>
-<nav class="nav">
-<button aria-expanded="false" aria-label="Toggle menu" class="menu-btn" id="menuBtn">
-<i class="fas fa-bars"></i>
+<div class="wrap header-inner">
+<a class="brand" href="#home" aria-label="Ahmed Sheref home">
+<span class="brand-mark">as<span>.</span>
+</span>
+<span>Ahmed Sheref</span>
+</a>
+<nav aria-label="Main navigation">
+<button id="menuBtn" class="menu-btn" aria-expanded="false" aria-controls="navLinks" aria-label="Open navigation">Menu <span aria-hidden="true">☰</span>
 </button>
-<ul class="nav-links" id="navLinks">
-<li><a href="#home">Home</a></li>
-<li><a href="#about">About</a></li>
-<li><a href="#experience">Experience</a></li>
-<li><a href="#projects">Projects</a></li>
-<li><a href="#skills">Skills</a></li>
-<li><a href="#certificates">Certificates</a></li>
-<li><a class="btn-cta" href="mailto:AhmedShAlhadad1@gmail.com" rel="noopener" target="_blank">Contact</a></li>
+<ul id="navLinks" class="nav-links">
+<li>
+<a href="#projects">Projects</a>
+</li>
+<li>
+<a href="#skills">Skills</a>
+</li>
+<li>
+<a href="#experience">Experience</a>
+</li>
+<li>
+<a href="#about">About</a>
+</li>
+<li>
+<a class="nav-contact" href="#contact">Let’s talk</a>
+</li>
 </ul>
 </nav>
 </div>
 </header>
-<main>
-<!-- HERO -->
+<main id="main">
 <section class="hero" id="home">
 <div class="wrap hero-inner">
-<div class="hero-left">
-
-<div class="kicker">AHMED SHEREF</div>
-<h1 class="hero-title">Backend <span>Developer</span></h1>
-<p class="hero-lead">I build reliable backend systems and thoughtful digital products that solve real problems.</p>
+<div class="hero-copy">
+<span class="eyebrow">BACKEND DEVELOPER · GIZA, EGYPT</span>
+<h1>Behind every great<br>product, a <span>solid backend.</span>
+</h1>
+<p class="hero-lead">I’m Ahmed Sheref. I build reliable APIs, connect complex systems, and turn ideas into products people use.</p>
+<p class="hero-stack">Node.js / Express.js / SQL & NoSQL / Azure</p>
 <div class="hero-actions">
-<a class="btn" href="#projects"><i class="fas fa-code"></i> View Projects</a>
-<a class="btn ghost" href="assets/Ahmed_Sh_Sheref_CV.pdf" rel="noopener" target="_blank"><i class="fas fa-file-lines"></i> View CV</a>
-<a class="btn ghost" href="mailto:AhmedShAlhadad1@gmail.com" rel="noopener" target="_blank"><i class="fas fa-paper-plane"></i> Contact</a>
+<a class="btn" href="#projects">Explore my work</a>
+<a class="btn ghost" href="assets/Ahmed_Sh_Sheref_CV.pdf">View my CV</a>
+</div>
+<div class="hero-socials">
+<a class="text-link" href="https://github.com/Ahmed-Sheref" target="_blank" rel="noopener noreferrer">GitHub</a>
+<a class="text-link" href="https://linkedin.com/in/ahmed-sheref-profile" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+<span>Cairo University · Class of 2027</span>
 </div>
 </div>
-<div class="hero-center"><div class="hero-profile-card hero-photo-card hero-profile-premium"><img alt="Portrait of Ahmed Sheref" class="profile-photo" src="assets/profile-ahmed.jpg"/><div class="profile-card-copy"><span class="profile-overline">AHMED SHEREF</span><strong>Backend Developer</strong><p class="hero-mini-meta">Cairo University · Giza, Egypt</p><div class="profile-social-links compact-socials"><a aria-label="GitHub" href="https://github.com/Ahmed-Sheref" rel="noopener" target="_blank"><i class="fab fa-github"></i> GitHub</a><a aria-label="LinkedIn" href="https://linkedin.com/in/ahmed-sheref-profile" rel="noopener" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></div></div></div></div>
+<aside class="hero-profile">
+<div class="portrait-frame">
+<img src="assets/profile-ahmed.jpg" alt="Ahmed Sheref" width="480" height="540" fetchpriority="high"/>
+<span class="portrait-label">The person behind the code.</span>
+</div>
+<div class="profile-caption">
+<div>
+<strong>Ahmed Sheref</strong>
+<span>Backend Developer</span>
+</div>
+<span class="code-mark" aria-hidden="true">{ }</span>
+</div>
+</aside>
 </div>
 </section>
-<!-- ABOUT -->
-<section class="section" id="about">
-<div class="wrap"><div class="about-compact-panel"><div class="about-compact-title"><span>ABOUT</span><h2>A little about me</h2></div><div class="about-compact-copy"><p>I’m a Computer Science &amp; AI student at Cairo University, majoring in Information Systems. I enjoy backend engineering, database design, and turning ideas into practical products with clean, maintainable code.</p><div class="about-compact-links"><a href="#experience">Experience</a><a href="#skills">Technical Skills</a></div></div></div></div>
-</section>
-<!-- EXPERIENCE -->
-<section class="experience-section" id="experience">
+<div class="expertise-strip">
+<div class="wrap">
+<span>From API to deployment</span>
+<p>Secure APIs <span>/</span> Database design <span>/</span> Third-party integrations <span>/</span> CI/CD</p>
+</div>
+</div>
+<section class="section" id="projects">
 <div class="wrap">
 <div class="section-head">
-<h2 class="section-title">Experience &amp; Training</h2>
-<span class="section-note">Hands-on development experience</span>
-</div>
-<div class="experience-grid">
-<article class="experience-card">
-<div class="experience-top">
 <div>
-<span class="experience-type">Training</span>
+<span class="eyebrow">SELECTED WORK</span>
+<h2>Built to solve real problems.</h2>
+</div>
+<p>A closer look at my backend systems, integrations, and product development.</p>
+</div>
+<div class="projects-grid">
+<article class="project-card featured-project">
+<div class="project-media">
+<img src="assets/ticktick-cover.jpg" alt="TickTick Extension project preview" loading="lazy" width="800" height="450"/>
+<span class="project-badge">Featured project</span>
+</div>
+<div class="project-body">
+<div class="project-date">Jan 2026 — Present</div>
+<h3>TickTick Extension</h3>
+<p>Turn saved web content into structured summaries, interactive quizzes, and actionable tasks. A publicly launched Chrome extension backed by an integrated Node.js system.</p>
+<div class="project-impact">
+<strong>643 <span>installs</span>
+</strong>
+<strong>4.73/5 <span>store rating</span>
+</strong>
+<small>As recorded in my CV</small>
+</div>
+<div class="techs">
+<span>Node.js</span>
+<span>Express.js</span>
+<span>MongoDB</span>
+<span>Groq / LLaMA</span>
+<span>OAuth 2.0</span>
+</div>
+<div class="project-links">
+<button class="btn " data-project="ticktick">Explore project</button>
+<a class="text-link" href="https://github.com/Ahmed-Sheref/TickTick_Extension" target="_blank" rel="noopener noreferrer">GitHub</a>
+<a class="text-link" href="https://chromewebstore.google.com/detail/akdjbmlbghlajjfjoijoagmilnllfmoe?utm_source=item-share-cb" target="_blank" rel="noopener noreferrer">Chrome Store</a>
+</div>
+</div>
+</article>
+<article class="project-card ">
+<div class="project-media">
+<img src="assets/natours-cover.png" alt="Natours — Tour Booking Platform project preview" loading="lazy" width="800" height="450"/>
+<span class="project-badge">Node.js Backend</span>
+</div>
+<div class="project-body">
+<div class="project-date">Sep 2026</div>
+<h3>Natours</h3>
+<p>A tour booking backend with secure authentication, advanced database queries, and verified Stripe payment workflows.</p>
+<div class="techs">
+<span>Node.js</span>
+<span>Express.js</span>
+<span>MongoDB</span>
+<span>Mongoose</span>
+<span>JWT</span>
+</div>
+<div class="project-links">
+<button class="btn ghost" data-project="natours">Explore project</button>
+<a class="text-link" href="https://github.com/Ahmed-Sheref/natours" target="_blank" rel="noopener noreferrer">GitHub</a>
+<a class="text-link" href="https://natours-coral-tau.vercel.app/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+</div>
+</div>
+</article>
+<article class="project-card ">
+<div class="project-media">
+<img src="assets/car-insurance-cover.png" alt="Car Insurance System project preview" loading="lazy" width="800" height="450"/>
+<span class="project-badge">Backend + SQL Server</span>
+</div>
+<div class="project-body">
+<div class="project-date">Jan 2026</div>
+<h3>Car Insurance System</h3>
+<p>A modular insurance backend connecting customers, vehicles, policies, claims, and payments through documented REST APIs.</p>
+<div class="techs">
+<span>Node.js</span>
+<span>Express.js</span>
+<span>SQL Server</span>
+<span>JWT</span>
+<span>Google OAuth</span>
+</div>
+<div class="project-links">
+<button class="btn ghost" data-project="insurance">Explore project</button>
+<a class="text-link" href="https://github.com/Ahmed-Sheref/Car-Insurance-System-BackEnd_Node.js" target="_blank" rel="noopener noreferrer">GitHub</a>
+</div>
+</div>
+</article>
+<article class="project-card ">
+<div class="project-media">
+<img src="assets/restaurant-cover.jpg" alt="Restaurant Ordering System project preview" loading="lazy" width="800" height="450"/>
+<span class="project-badge">Java + Design Patterns</span>
+</div>
+<div class="project-body">
+<div class="project-date">Oct 2025</div>
+<h3>Restaurant Ordering System</h3>
+<p>A Java console application that applies object-oriented design and reusable patterns to restaurant ordering.</p>
+<div class="techs">
+<span>Java</span>
+<span>OOP</span>
+<span>Facade</span>
+<span>Strategy</span>
+<span>Observer</span>
+</div>
+<div class="project-links">
+<button class="btn ghost" data-project="restaurant">Explore project</button>
+<a class="text-link" href="https://github.com/Ahmed-Sheref/Restaurant-App" target="_blank" rel="noopener noreferrer">GitHub</a>
+</div>
+</div>
+</article>
+</div>
+<div class="section-bottom">More code, experiments, and ideas on <a class="text-link" href="https://github.com/Ahmed-Sheref" target="_blank" rel="noopener noreferrer">GitHub</a>.</div>
+</div>
+</section>
+<section class="section section-tinted" id="skills">
+<div class="wrap">
+<div class="section-head">
+<div>
+<span class="eyebrow">TECHNICAL TOOLKIT</span>
+<h2>The tools behind the work.</h2>
+</div>
+<p>A backend focus, with the frontend and delivery skills to connect the whole picture.</p>
+</div>
+<div class="skills-grid">
+<article class="skill-card">
+<h3>Backend engineering</h3>
+<div class="techs">
+<span>Node.js</span>
+<span>Express.js</span>
+<span>RESTful APIs</span>
+<span>JWT</span>
+<span>OAuth2</span>
+<span>Stripe</span>
+<span>Webhooks</span>
+</div>
+</article>
+<article class="skill-card">
+<h3>Databases & modeling</h3>
+<div class="techs">
+<span>MongoDB</span>
+<span>Mongoose</span>
+<span>SQL Server</span>
+<span>PostgreSQL</span>
+<span>MySQL</span>
+<span>Redis</span>
+</div>
+</article>
+<article class="skill-card">
+<h3>Cloud & delivery</h3>
+<div class="techs">
+<span>Azure VM</span>
+<span>GitHub Actions</span>
+<span>CI/CD</span>
+<span>Automated testing</span>
+<span>Git</span>
+<span>GitHub</span>
+</div>
+</article>
+<article class="skill-card">
+<h3>Frontend development</h3>
+<div class="techs">
+<span>HTML</span>
+<span>CSS</span>
+<span>JavaScript</span>
+<span>TypeScript</span>
+<span>Angular</span>
+</div>
+</article>
+<article class="skill-card">
+<h3>Software engineering</h3>
+<div class="techs">
+<span>OOP</span>
+<span>SOLID</span>
+<span>Design Patterns</span>
+<span>Data Structures & Algorithms</span>
+<span>SDLC</span>
+<span>Agile</span>
+</div>
+</article>
+<article class="skill-card">
+<h3>Languages & tools</h3>
+<div class="techs">
+<span>JavaScript</span>
+<span>TypeScript</span>
+<span>C++</span>
+<span>C#</span>
+<span>Java</span>
+<span>Postman</span>
+<span>Swagger / OpenAPI</span>
+</div>
+</article>
+</div>
+</div>
+</section>
+<section class="section" id="experience">
+<div class="wrap">
+<div class="section-head">
+<div>
+<span class="eyebrow">EXPERIENCE & TRAINING</span>
+<h2>Learning through building.</h2>
+</div>
+</div>
+<div class="experience-list">
+<article class="experience-row">
+<div>
+<span class="eyebrow">JUN — AUG 2026</span>
+<p>Training</p>
+</div>
+<div>
 <h3>MEAN Stack Development Trainee</h3>
 <h4>National Telecommunication Institute (NTI)</h4>
-</div>
-<span class="experience-date">Jun 2026 — Aug 2026</span>
-</div>
 <ul>
-<li>Developed full-stack applications using MongoDB, Express.js, Angular, and Node.js.</li>
+<li>Developed full-stack applications with MongoDB, Express.js, Angular, and Node.js.</li>
 <li>Built Angular components, services, routing, and forms with TypeScript and dependency injection.</li>
-<li>Applied schema modeling, indexing, query optimization, and relational vs. NoSQL database concepts.</li>
+<li>Applied schema modeling, database indexing, and query optimization across relational and NoSQL concepts.</li>
 </ul>
+</div>
 </article>
-<article class="experience-card">
-<div class="experience-top">
+<article class="experience-row">
 <div>
-<span class="experience-type">Student Activity</span>
+<span class="eyebrow">DEC 2025 — MAR 2026</span>
+<p>Student activity</p>
+</div>
+<div>
 <h3>Backend Developer</h3>
 <h4>Star Union</h4>
-</div>
-<span class="experience-date">Dec 2025 — Mar 2026</span>
-</div>
 <ul>
 <li>Designed and implemented RESTful APIs for application features and backend workflows.</li>
 <li>Worked with SQL Server to manage application data and improve query performance.</li>
-<li>Collaborated on debugging, backend delivery, and system stability improvements.</li>
+<li>Collaborated on debugging, backend delivery, and improvements to system stability.</li>
 </ul>
+</div>
 </article>
 </div>
 </div>
 </section>
-<!-- PROJECTS -->
-<section class="projects-section" id="projects">
+<section class="section section-tinted" id="about">
+<div class="wrap about-grid">
+<div>
+<span class="eyebrow">A LITTLE ABOUT ME</span>
+<h2>Curious by nature.<br>Practical by design.</h2>
+<p>I’m a Computer Science and AI student at Cairo University, majoring in Information Systems. I enjoy designing the systems behind a product: its data, APIs, integrations, and deployment.</p>
+<p>My work combines Node.js development with SQL and NoSQL databases, third-party services, and automated delivery. MEAN Stack training has also given me a practical foundation in Angular and TypeScript.</p>
+<div class="language-list">
+<span>Arabic <strong>Native</strong>
+</span>
+<span>English <strong>B2</strong>
+</span>
+</div>
+</div>
+<div class="about-facts">
+<article>
+<span class="eyebrow">EDUCATION</span>
+<h3>Cairo University</h3>
+<p>B.Sc. in Computer Science & Artificial Intelligence</p>
+<div class="fact-pair">
+<span>Information Systems</span>
+<strong>2023 — 2027</strong>
+</div>
+<div class="fact-pair">
+<span>GPA</span>
+<strong>3.12</strong>
+</div>
+</article>
+<article>
+<span class="eyebrow">PROBLEM SOLVING</span>
+<h3>Two-time ECPC participant</h3>
+<p>Competed in the Egyptian Collegiate Programming Contest in July 2024 and July 2025, building algorithmic thinking and teamwork under contest conditions.</p>
+<a class="text-link" href="https://codeforces.com/profile/ahmedsheref2288" target="_blank" rel="noopener noreferrer">Codeforces profile</a>
+</article>
+</div>
+</div>
+</section>
+<section class="section" id="certificates">
 <div class="wrap">
 <div class="section-head">
-<div class="section-heading-copy"><div class="projects-heading-row"><h2 class="section-title">Featured Projects</h2><a class="projects-github-link" href="https://github.com/Ahmed-Sheref" rel="noopener" target="_blank"><i class="fab fa-github"></i> Explore GitHub <i class="fas fa-arrow-up-right-from-square"></i></a></div><p>A selection of backend and product-focused projects.</p></div>
-</div>
-<div class="projects-grid">
-<article class="project-card featured-project" data-project="natours">
-<div class="project-media">
-<img alt="Natours tour booking platform project cover" decoding="async" loading="lazy" src="assets/natours-cover.png"/>
-<div class="project-media-overlay">
-<span class="project-badge">Featured</span>
-<span class="project-date">Sep 2026</span>
+<div>
+<span class="eyebrow">CONTINUOUS LEARNING</span>
+<h2>Training & credentials.</h2>
 </div>
 </div>
-<h3>Natours</h3>
-<p>A tour booking platform with authentication, booking workflows, Stripe payments, image processing, and advanced API features.</p>
-<div class="techs">
-<span>Node.js</span><span>Express.js</span><span>MongoDB</span><span>Mongoose</span><span>Stripe</span><span>JWT</span><span>Sharp</span>
+<div class="certificates-grid">
+<article class="certificate-card">
+<div class="certificate-media">
+<img alt="Node.js, Express &amp; MongoDB Bootcamp certificate image" decoding="async" loading="lazy" src="assets/cert-node-bootcamp.png"/>
 </div>
-<div class="project-links"><button class="btn ghost project-details-btn" data-project="natours" type="button"><i class="fas fa-circle-info"></i> Details</button>
-<a class="btn ghost" href="https://github.com/Ahmed-Sheref/natours" rel="noopener" target="_blank"><i class="fab fa-github"></i> View Code</a>
-<a class="btn" href="https://natours-coral-tau.vercel.app/" rel="noopener" target="_blank"><i class="fas fa-arrow-up-right-from-square"></i> Live Demo</a>
-<a class="btn ghost" href="https://natours-ssy8.onrender.com" rel="noopener" target="_blank"><i class="fas fa-server"></i> Backend</a>
+<h3>Node.js, Express &amp; MongoDB Bootcamp</h3>
+<p>Udemy • Sep 2026</p>
+<div class="project-links">
+<a class="text-link" href="https://drive.google.com/file/d/1psNavGxQHrnHVnuwbNNu5XVqY2yrM8Bl/view?usp=drive_link" rel="noopener" target="_blank">View Credential</a>
 </div>
 </article>
-<article class="project-card featured-project" data-project="ticktick">
-<div class="project-media">
-<img alt="TickTick Extension AI productivity system project cover" decoding="async" loading="lazy" src="assets/ticktick-cover.jpg"/>
-<div class="project-media-overlay">
-<span class="project-badge">Chrome Extension</span>
-<span class="project-date">320 users</span>
+<article class="certificate-card">
+<div class="certificate-media">
+<img alt="MEAN Stack Web Development certificate image" decoding="async" loading="lazy" src="assets/cert-nti-mean.png"/>
 </div>
-</div>
-<h3>TickTick Extension</h3>
-<p>Chrome extension for saving articles, generating AI summaries, organizing content, and turning saved knowledge into useful actions. Currently used by 320 users.</p>
-<div class="techs"><span>Chrome Extension</span><span>Node.js</span><span>Express.js</span><span>MongoDB</span><span>Groq API</span><span>OAuth2</span></div>
-<div class="project-links"><button class="btn ghost project-details-btn" data-project="ticktick" type="button"><i class="fas fa-circle-info"></i> Details</button>
-<a class="btn ghost" href="https://github.com/Ahmed-Sheref/TickTick_Extension" rel="noopener" target="_blank">View Code</a>
-<a class="btn" href="https://chromewebstore.google.com/detail/akdjbmlbghlajjfjoijoagmilnllfmoe?utm_source=item-share-cb" rel="noopener" target="_blank"><i class="fas fa-store"></i> Chrome Store</a></div>
-</article>
-<article class="project-card" data-project="insurance">
-<div class="project-media">
-<img alt="Car Insurance Management backend project cover" decoding="async" loading="lazy" src="assets/car-insurance-cover.png"/>
-<div class="project-media-overlay">
-<span class="project-badge">Backend</span>
-<span class="project-date">Jan 2026</span>
-</div>
-</div>
-<h3>Car Insurance System</h3>
-<p>Backend system for customers, vehicles, policies, claims, and payments with secure authentication and API documentation.</p>
-<div class="techs">
-<span>Node.js</span><span>Express.js</span><span>SQL Server</span><span>JWT</span><span>OAuth</span><span>Swagger</span>
-</div>
-<div class="project-links"><button class="btn ghost project-details-btn" data-project="insurance" type="button"><i class="fas fa-circle-info"></i> Details</button>
-<a class="btn ghost" href="https://github.com/Ahmed-Sheref/Car-Insurance-System-BackEnd_Node.js" rel="noopener" target="_blank">View Code</a>
+<h3>MEAN Stack Web Development</h3>
+<p>National Telecommunication Institute (NTI) • Aug 2026</p>
+<div class="project-links">
+<a class="text-link" href="https://drive.google.com/file/d/1dJO74kRcnwWnnBNu7L4o_5soURBb7YMI/view" rel="noopener" target="_blank">View Credential</a>
 </div>
 </article>
-<article class="project-card" data-project="restaurant">
-<div class="project-media">
-<img alt="Restaurant Management Java project cover" decoding="async" loading="lazy" src="assets/restaurant-cover.jpg"/>
-<div class="project-media-overlay">
-<span class="project-badge">Java + OOP</span>
-<span class="project-date">Oct 2025</span>
+<article class="certificate-card">
+<div class="certificate-media">
+<img alt="Shell Intilaaqah Bootcamp certificate image" decoding="async" loading="lazy" src="assets/cert-shell-flat6.png"/>
 </div>
+<h3>Shell Intilaaqah Bootcamp</h3>
+<p>Flat6Labs &amp; Shell • Apr 2026</p>
+<div class="project-links">
+<a class="text-link" href="https://drive.google.com/file/d/1t03LReAhLaYBsPk4ZE1dd9FabvpeRNeH/view" rel="noopener" target="_blank">View Credential</a>
 </div>
-<h3>Restaurant Ordering System</h3>
-<p>Java project for restaurant ordering and management built with object-oriented design and reusable design patterns.</p>
-<div class="techs">
-<span>Java</span><span>OOP</span><span>Facade</span><span>Strategy</span><span>Observer</span><span>Decorator</span>
+</article>
+<article class="certificate-card">
+<div class="certificate-media">
+<img alt="Node.js from Scratch certificate image" decoding="async" loading="lazy" src="assets/cert-node-from-scratch.png"/>
 </div>
-<div class="project-links"><button class="btn ghost project-details-btn" data-project="restaurant" type="button"><i class="fas fa-circle-info"></i> Details</button>
-<a class="btn ghost" href="https://github.com/Ahmed-Sheref/Restaurant-App" rel="noopener" target="_blank">View Code</a>
+<h3>Node.js from Scratch</h3>
+<p>Cloud Native Base Camp • Sep 2025</p>
+<div class="project-links">
+<a class="text-link" href="https://drive.google.com/file/d/1iipN-5s0cV2N0U3RWRb2WUt7xpQNCFwx/view" rel="noopener" target="_blank">View Credential</a>
+</div>
+</article>
+<article class="certificate-card">
+<div class="certificate-media">
+<img alt="Master Git &amp; GitHub Udemy certificate image" decoding="async" loading="lazy" src="assets/cert-git-cover.png"/>
+</div>
+<h3>Master Git &amp; GitHub: Essential Skills for Developers</h3>
+<p>Udemy • May 2025</p>
+<div class="project-links">
+<a class="text-link" href="https://drive.google.com/file/d/1HdSV65tiyFOIG8okylYvtAg1Mk-enSke/view" rel="noopener" target="_blank">View Credential</a>
 </div>
 </article>
 </div>
 </div>
 </section>
-<!-- SKILLS -->
-<section class="services-section" id="skills">
-<div class="wrap">
-<h2 class="section-title">Technical Skills</h2>
-<div class="services-grid">
-<div class="service-card">
-<i class="fab fa-node-js"></i>
-<h4>Backend Engineering</h4>
-<p>Node.js, Express.js, RESTful APIs, JWT, OAuth2, Stripe &amp; Webhooks.</p>
+<section class="section contact-section" id="contact">
+<div class="wrap contact-inner">
+<div>
+<span class="eyebrow">GET IN TOUCH</span>
+<h2>Have something<br>in mind? <span>Let’s talk.</span>
+</h2>
+<p>For backend opportunities, project conversations, or a technical hello.</p>
 </div>
-<div class="service-card">
-<i class="fas fa-database"></i>
-<h4>Databases</h4>
-<p>MongoDB, Mongoose, MySQL, PostgreSQL, SQL Server &amp; Redis.</p>
-</div>
-<div class="service-card">
-<i class="fab fa-angular"></i>
-<h4>Frontend</h4>
-<p>HTML, CSS, JavaScript, TypeScript &amp; Angular.</p>
-</div>
-<div class="service-card">
-<i class="fas fa-diagram-project"></i>
-<h4>Software Engineering</h4>
-<p>OOP, SOLID, Design Patterns, SDLC, Agile, Data Structures &amp; Algorithms.</p>
-</div>
-<div class="service-card">
-<i class="fas fa-code"></i>
-<h4>Programming</h4>
-<p>JavaScript, TypeScript, C++, C#, Java, Python &amp; C.</p>
-</div>
-<div class="service-card">
-<i class="fas fa-screwdriver-wrench"></i>
-<h4>Developer Tools</h4>
-<p>Git, GitHub, Postman, Swagger/OpenAPI and production deployment workflows.</p>
-</div>
+<div class="contact-links">
+<a class="contact-email" href="mailto:AhmedShAlhadad1@gmail.com">AhmedShAlhadad1@gmail.com</a>
+<a class="text-link" href="https://linkedin.com/in/ahmed-sheref-profile" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
+<a class="btn ghost" href="assets/Ahmed_Sh_Sheref_CV.pdf" download="Ahmed_Sheref_CV.pdf">Download CV</a>
 </div>
 </div>
 </section>
-<!-- EDUCATION & COMPETITIVE PROGRAMMING -->
-<section class="process-section" id="education">
-<div class="wrap"><h2 class="section-title">Education</h2><p class="education-intro">Cairo University — Computer Science &amp; Artificial Intelligence</p><div class="education-grid education-single"><article class="education-card university-only-card"><div class="education-visual university-image-visual"><div class="university-logo-shell"><img alt="Cairo University logo" loading="lazy" referrerpolicy="no-referrer" src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Cairo_University_new_logo.png"/></div><div class="education-image-label"><strong>Cairo University</strong><span>Faculty of Computer Science &amp; Artificial Intelligence</span></div></div><div class="education-content"><h3>B.Sc. in Computer Science &amp; Artificial Intelligence</h3><p class="education-meta">Major: Information Systems (IS)</p><div class="education-detail-grid"><div class="education-detail-item"><span>Year</span><strong>Fourth Year</strong></div><div class="education-detail-item"><span>GPA</span><strong>3.12</strong></div><div class="education-detail-item"><span>Study Period</span><strong>2023 — 2027</strong></div><div class="education-detail-item"><span>Location</span><strong>Giza, Egypt</strong></div></div></div></article></div></div>
-</section>
-<!-- CERTIFICATES -->
-<section class="certificates-section" id="certificates">
-<div class="wrap">
-<div class="section-head">
-<h2 class="section-title">Certificates &amp; Achievements</h2>
-<span class="section-note">Latest first</span>
-</div>
-<div class="certificates-grid"><article class="certificate-card"><div class="certificate-media"><img alt="Node.js, Express &amp; MongoDB Bootcamp certificate image" decoding="async" loading="lazy" src="assets/cert-node-bootcamp.png"/></div><h3>Node.js, Express &amp; MongoDB Bootcamp</h3><p>Udemy • Sep 2026</p><div class="techs"><span>Node.js</span><span>Express</span><span>MongoDB</span></div><div class="project-links"><a class="btn ghost" href="https://drive.google.com/file/d/1psNavGxQHrnHVnuwbNNu5XVqY2yrM8Bl/view?usp=drive_link" rel="noopener" target="_blank"><i class="fas fa-certificate"></i> View Credential</a></div></article><article class="certificate-card"><div class="certificate-media"><img alt="MEAN Stack Web Development certificate image" decoding="async" loading="lazy" src="assets/cert-nti-mean.png"/></div><h3>MEAN Stack Web Development</h3><p>National Telecommunication Institute (NTI) • Aug 2026</p><div class="techs"><span>MongoDB</span><span>Express</span><span>Angular</span><span>Node.js</span></div><div class="project-links"><a class="btn ghost" href="https://drive.google.com/file/d/1dJO74kRcnwWnnBNu7L4o_5soURBb7YMI/view" rel="noopener" target="_blank"><i class="fas fa-certificate"></i> View Credential</a></div></article><article class="certificate-card"><div class="certificate-media"><img alt="Shell Intilaaqah Bootcamp certificate image" decoding="async" loading="lazy" src="assets/cert-shell-flat6.png"/></div><h3>Shell Intilaaqah Bootcamp</h3><p>Flat6Labs &amp; Shell • Apr 2026</p><div class="techs"><span>Bootcamp</span><span>Entrepreneurship</span></div><div class="project-links"><a class="btn ghost" href="https://drive.google.com/file/d/1t03LReAhLaYBsPk4ZE1dd9FabvpeRNeH/view" rel="noopener" target="_blank"><i class="fas fa-certificate"></i> View Credential</a></div></article><article class="certificate-card"><div class="certificate-media"><img alt="Data Analysis Skills certificate image" decoding="async" loading="lazy" src="assets/cert-datacamp-sql.png"/></div><h3>Data Analysis Skills</h3><p>DataCamp • Mar 2025</p><div class="techs"><span>Data Analysis</span><span>SQL</span></div><div class="project-links"><a class="btn ghost" href="https://drive.google.com/file/d/11XMCS9t-DtBSMSRbf57v1enOQBquauRb/view" rel="noopener" target="_blank"><i class="fas fa-certificate"></i> View Credential</a></div></article><article class="certificate-card"><div class="certificate-media"><img alt="CU AI Nexus 2025 certificate image" decoding="async" loading="lazy" src="assets/cert-cu-ai-nexus.png"/></div><h3>CU AI Nexus 2025</h3><p>Cairo University • 18–19 Oct 2025</p><div class="techs"><span>AI Conference</span><span>Attendance</span></div><div class="project-links"><a class="btn ghost" href="https://drive.google.com/file/d/1ZM26z2b46zZW54uXFWhzzFPPH8_KBkF0/view?usp=sharing" rel="noopener" target="_blank"><i class="fas fa-certificate"></i> View Credential</a></div></article><article class="certificate-card"><div class="certificate-media"><img alt="Node.js from Scratch certificate image" decoding="async" loading="lazy" src="assets/cert-node-from-scratch.png"/></div><h3>Node.js from Scratch</h3><p>Cloud Native Base Camp • Sep 2025</p><div class="techs"><span>Node.js</span><span>Backend</span></div><div class="project-links"><a class="btn ghost" href="https://drive.google.com/file/d/1iipN-5s0cV2N0U3RWRb2WUt7xpQNCFwx/view" rel="noopener" target="_blank"><i class="fas fa-certificate"></i> View Credential</a></div></article><article class="certificate-card"><div class="certificate-media"><img alt="Algorithms Analysis and Design from Scratch certificate image" decoding="async" loading="lazy" src="assets/cert-algorithms-analysis.png"/></div><h3>Algorithms Analysis and Design from Scratch</h3><p>Cloud Native Base Camp</p><div class="techs"><span>Algorithms</span><span>Problem Solving</span></div><div class="project-links"><a class="btn ghost" href="assets/cert-algorithms-analysis.png" rel="noopener" target="_blank"><i class="fas fa-certificate"></i> View Credential</a></div></article><article class="certificate-card"><div class="certificate-media"><img alt="Data Structures Decode certificate image" decoding="async" loading="lazy" src="assets/cert-data-structures-decode.png"/></div><h3>Data Structures Decode</h3><p>Cloud Native Base Camp</p><div class="techs"><span>Data Structures</span><span>Algorithms</span></div><div class="project-links"><a class="btn ghost" href="assets/cert-data-structures-decode.png" rel="noopener" target="_blank"><i class="fas fa-certificate"></i> View Credential</a></div></article><article class="certificate-card"><div class="certificate-media"><img alt="ICPC ECPC Qualifications 2025 certificate image" decoding="async" loading="lazy" src="assets/cert-ecpc-2025.png"/></div><h3>ICPC ECPC Qualifications 2025</h3><p>Achievement • 95th Place</p><div class="techs"><span>Competitive Programming</span><span>ICPC</span></div><div class="project-links"><a class="btn ghost" href="assets/cert-ecpc-2025.png" rel="noopener" target="_blank"><i class="fas fa-certificate"></i> View Credential</a></div></article><article class="certificate-card"><div class="certificate-media"><img alt="Master Git &amp; GitHub Udemy certificate image" decoding="async" loading="lazy" src="assets/cert-git-cover.png"/></div><h3>Master Git &amp; GitHub: Essential Skills for Developers</h3><p>Udemy • Oct 2025</p><div class="techs"><span>Git</span><span>GitHub</span><span>Version Control</span></div><div class="project-links"><a class="btn ghost" href="https://drive.google.com/file/d/1HdSV65tiyFOIG8okylYvtAg1Mk-enSke/view" rel="noopener" target="_blank"><i class="fas fa-certificate"></i> View Credential</a></div></article></div>
-</div>
-</section>
-<!-- CONTACT -->
 </main>
-<div aria-hidden="true" class="project-modal" id="projectModal">
-<div class="project-modal-backdrop" data-modal-close=""></div>
-<section aria-labelledby="projectModalTitle" aria-modal="true" class="project-modal-dialog" role="dialog">
-<button aria-label="Close project details" class="project-modal-close" data-modal-close="" type="button"><i class="fas fa-xmark"></i></button>
-<div class="project-modal-media"><img alt="" id="projectModalImage"/></div>
+<dialog id="projectModal" aria-labelledby="projectModalTitle">
+<button class="project-modal-close" aria-label="Close project details">×</button>
+<div class="project-modal-media">
+<img id="projectModalImage" alt=""/>
+</div>
 <div class="project-modal-content">
-<div class="project-modal-topline"><span id="projectModalDate"></span><span id="projectModalType"></span></div>
-<h2 id="projectModalTitle"></h2>
-<p id="projectModalSummary"></p>
+<span class="eyebrow" id="projectModalDate">
+</span>
+<h2 id="projectModalTitle">
+</h2>
+<p id="projectModalSummary">
+</p>
 <h3>What I built</h3>
-<ul id="projectModalHighlights"></ul>
-<div class="techs" id="projectModalTech"></div>
-<div class="project-modal-links" id="projectModalLinks"></div>
+<ul id="projectModalHighlights">
+</ul>
+<div class="techs" id="projectModalTech">
 </div>
-</section>
+<div class="project-links" id="projectModalLinks">
 </div>
+</div>
+</dialog>
 <footer class="site-footer">
 <div class="wrap footer-inner">
-<div class="left">
-<a class="brand" href="#home">Ahmed <span>Sheref</span></a>
-<p>© <span id="year"></span> Ahmed Sheref. All Rights Reserved.</p>
-</div>
-<div class="right">
-<div class="social-small">
-<a aria-label="GitHub" href="https://github.com/Ahmed-Sheref" rel="noopener" target="_blank"><i class="fab fa-github"></i></a>
-<a aria-label="LinkedIn" href="https://linkedin.com/in/ahmed-sheref-profile" rel="noopener" target="_blank"><i class="fab fa-linkedin"></i></a>
-<a aria-label="Codeforces" href="https://codeforces.com/profile/ahmedsheref2288" rel="noopener" target="_blank"><i class="fas fa-code"></i></a>
-</div>
-</div>
+<a class="brand" href="#home">Ahmed Sheref<span>.</span>
+</a>
+<p>© <span id="year">2026</span> Ahmed Sheref</p>
+<a href="#home">Back to top</a>
 </div>
 </footer>
-<script defer="" src="script.js"></script>
+<script src="projects.js" defer>
+</script>
+<script src="script.js" defer>
+</script>
 </body>
 </html>
