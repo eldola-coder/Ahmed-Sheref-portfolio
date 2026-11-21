@@ -61,6 +61,36 @@ const observer = new IntersectionObserver(entries => {
 }, {rootMargin:'-15% 0px -65% 0px', threshold:0});
 sections.forEach(section => observer.observe(section));
 
+const certificateCards = [...document.querySelectorAll('.certificate-card')];
+const certificateFilters = [...document.querySelectorAll('[data-certificate-filter]')];
+const showMoreCertificates = document.getElementById('showMoreCertificates');
+const certificateStatus = document.getElementById('certificateStatus');
+let certificateCategory = 'all';
+let certificateLimit = 6;
+function updateCertificates() {
+  const matches = certificateCards.filter(card => certificateCategory === 'all' || card.dataset.category === certificateCategory);
+  const visible = new Set(matches.slice(0, certificateLimit));
+  certificateCards.forEach(card => { card.hidden = !visible.has(card); });
+  certificateFilters.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.certificateFilter === certificateCategory)));
+  const remaining = Math.max(0, matches.length - certificateLimit);
+  showMoreCertificates.hidden = remaining === 0;
+  showMoreCertificates.textContent = `Show ${Math.min(6, remaining)} more certificates`;
+  certificateStatus.textContent = `${visible.size} of ${matches.length} credentials`;
+}
+certificateFilters.forEach(button => button.addEventListener('click', () => {
+  certificateCategory = button.dataset.certificateFilter;
+  certificateLimit = 6;
+  updateCertificates();
+}));
+showMoreCertificates.addEventListener('click', () => {
+  const previouslyVisible = new Set(certificateCards.filter(card => !card.hidden));
+  certificateLimit += 6;
+  updateCertificates();
+  certificateCards.find(card => !card.hidden && !previouslyVisible.has(card))?.querySelector('a')?.focus({preventScroll: true});
+});
+document.querySelector('.certificate-toolbar').hidden = false;
+updateCertificates();
+
 // Motion is progressive: content stays visible if animation support is unavailable.
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
 const finePointer = matchMedia('(hover: hover) and (pointer: fine)');

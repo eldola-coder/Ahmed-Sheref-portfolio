@@ -1269,6 +1269,126 @@ dialog[open] {
   .hero::before, .hero::after { filter: blur(25px); }
 }
 
+/* A visual hierarchy for core technologies and the supporting toolkit. */
+.core-stack {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 28px;
+}
+.core-tech {
+  --tech-color: #7dd3c0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 19px 15px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: linear-gradient(140deg, #ffffff04, transparent);
+}
+.core-node { --tech-color: #a4d776; }
+.core-express { --tech-color: #d9e0e8; }
+.core-mongo { --tech-color: #6dd9a3; }
+.core-postgres { --tech-color: #93bff0; }
+.core-azure { --tech-color: #80c9ff; }
+.tech-mark {
+  flex: 0 0 42px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  color: var(--tech-color);
+  background: color-mix(in srgb, var(--tech-color) 9%, transparent);
+  border: 1px solid color-mix(in srgb, var(--tech-color) 28%, transparent);
+  border-radius: 10px;
+  font: 600 1rem/1 ui-monospace, monospace;
+  letter-spacing: -.05em;
+}
+.core-tech strong { display: block; font-size: .9375rem; font-weight: 600; }
+.core-tech div > span { display: block; font-size: .75rem; color: var(--muted); margin-top: 3px; }
+.skills-grid {
+  gap: 18px;
+  border: 0;
+  border-radius: 0;
+  overflow: visible;
+}
+.skills-grid .skill-card {
+  --skill-color: #7dd3c0;
+  position: relative;
+  padding: 26px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: linear-gradient(145deg, #17232a, #111820 70%);
+  overflow: hidden;
+  transition: border-color 250ms, box-shadow 250ms, background 250ms;
+}
+.skills-grid .skill-card::before {
+  content: '';
+  position: absolute;
+  height: 2px;
+  top: 0;
+  left: 26px;
+  right: 26px;
+  background: linear-gradient(90deg, var(--skill-color), transparent);
+  opacity: .65;
+}
+.skills-grid .skill-database { --skill-color: #9abffa; background: linear-gradient(145deg, #1a2435, #111820 70%); }
+.skills-grid .skill-cloud { --skill-color: #c4abef; background: linear-gradient(145deg, #252036, #111820 70%); }
+.skills-grid .skill-frontend { --skill-color: #f0bb85; background: linear-gradient(145deg, #2e261f, #111820 70%); }
+.skills-grid .skill-engineering { --skill-color: #e4a6bc; background: linear-gradient(145deg, #2e2029, #111820 70%); }
+.skills-grid .skill-code { --skill-color: #9fcbd7; }
+.skill-heading { display: flex; flex-direction: column; align-items: start; gap: 20px; margin-bottom: 24px; }
+.skill-icon { width: 46px; height: 46px; padding: 11px; display: block; border: 1px solid color-mix(in srgb, var(--skill-color) 25%, transparent); border-radius: 12px; color: var(--skill-color); background: color-mix(in srgb, var(--skill-color) 8%, transparent); }
+.skill-icon svg { display: block; width: 100%; height: 100%; }
+.skills-grid .skill-card h3 { margin: 0 0 8px; font-size: 1.125rem; }
+.skill-heading p { margin: 0; font-size: .8125rem; color: var(--muted); }
+.skills-grid .techs { gap: 8px; }
+.skills-grid .techs span { padding: 5px 10px; background: #ffffff04; border: 1px solid #ffffff0d; border-radius: 5px; }
+.skills-grid .techs .primary-tech { color: var(--skill-color); border-color: color-mix(in srgb, var(--skill-color) 24%, transparent); background: color-mix(in srgb, var(--skill-color) 6%, transparent); }
+
+/* The full credential collection stays browsable without lengthening the page. */
+[hidden] { display: none !important; }
+.certificate-toolbar { margin-bottom: 26px; }
+.certificate-filters { display: flex; flex-wrap: wrap; gap: 10px; }
+.certificate-filters button { min-height: 44px; border: 1px solid var(--line); border-radius: 7px; color: var(--muted); background: transparent; padding: 9px 14px; font-size: .875rem; }
+.certificate-filters button span { margin-left: 6px; font-size: .75rem; opacity: .8; }
+.certificate-filters button[aria-pressed="true"] { color: var(--accent); background: #7dd3c00d; border-color: #7dd3c066; }
+#certificateStatus { margin: 14px 0 0; font-size: .8125rem; }
+.certificates-grid .certificate-card { padding: 0; overflow: hidden; display: flex; flex-direction: column; }
+.certificates-grid .certificate-media { display: block; height: auto; aspect-ratio: 1.42; border-radius: 0; margin: 0; background: #e8ebed; border-bottom: 1px solid var(--line); }
+.certificate-media img { transition: transform 350ms ease; }
+.certificate-content { padding: 22px; display: flex; flex: 1; flex-direction: column; align-items: start; }
+.credential-issuer { color: var(--accent); font-size: .75rem; font-weight: 500; margin-bottom: 10px; }
+.certificate-content h3 { margin: 0; }
+.certificate-content p { margin: 10px 0 20px; }
+.certificate-content > a { font-size: .875rem; margin-top: auto; }
+.certificate-more { display: flex; justify-content: center; margin-top: 28px; }
+@media (hover: hover) and (pointer: fine) {
+  .skills-grid .skill-card:hover { border-color: color-mix(in srgb, var(--skill-color) 55%, transparent); box-shadow: 0 12px 35px #0002; }
+  .certificate-media:hover img { transform: scale(1.025); }
+  .certificate-filters button:hover { border-color: #7dd3c066; color: var(--text); }
+}
+@media (max-width: 1100px) {
+  .core-stack { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 760px) {
+  .core-stack { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .core-tech:last-child { grid-column: 1 / -1; }
+  .skills-grid { gap: 14px; }
+  .skills-grid .skill-card { padding: 22px; }
+  .skill-heading { gap: 16px; }
+  .certificate-content { padding: 20px; }
+}
+@media (max-width: 440px) {
+  .core-tech { padding: 14px 10px; gap: 9px; }
+  .tech-mark { flex-basis: 32px; height: 38px; font-size: .8125rem; }
+  .core-tech strong { font-size: .875rem; }
+  .core-tech div > span { font-size: .75rem; }
+  .skill-heading { flex-direction: row; align-items: center; gap: 16px; }
+  .skill-icon { flex: 0 0 44px; }
+  .certificate-filters { gap: 8px; }
+  .certificate-filters button { padding-inline: 10px; font-size: .8125rem; }
+}
+
 @media(prefers-reduced-motion:reduce) {
   html {
     scroll-behavior:auto
