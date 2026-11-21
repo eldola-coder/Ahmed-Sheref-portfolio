@@ -60,3 +60,69 @@ const observer = new IntersectionObserver(entries => {
   });
 }, {rootMargin:'-15% 0px -65% 0px', threshold:0});
 sections.forEach(section => observer.observe(section));
+
+// Motion is progressive: content stays visible if animation support is unavailable.
+const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+const finePointer = matchMedia('(hover: hover) and (pointer: fine)');
+const activeAnimations = new Set();
+function playEntrance(element, delay = 0) {
+  if (reducedMotion.matches || !element.animate) return;
+  const animation = element.animate([
+    { opacity: 0.15, transform: 'translateY(24px)' },
+    { opacity: 1, transform: 'translateY(0)' }
+  ], { duration: 760, delay, easing: 'cubic-bezier(.2,.7,.2,1)', fill: 'backwards' });
+  activeAnimations.add(animation);
+  animation.finished.then(() => activeAnimations.delete(animation), () => activeAnimations.delete(animation));
+}
+document.querySelectorAll('.hero-copy > *, .hero-profile').forEach((element, index) => {
+  playEntrance(element, Math.min(index * 80, 400));
+});
+const revealObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    const siblings = [...entry.target.parentElement.children];
+    playEntrance(entry.target, Math.min(siblings.indexOf(entry.target) * 65, 180));
+    revealObserver.unobserve(entry.target);
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -24px 0px' });
+document.querySelectorAll('.section-head, .project-card, .skill-card, .experience-row, .about-grid > div, .certificate-card, .contact-inner > div').forEach(element => revealObserver.observe(element));
+
+const portrait = document.querySelector('.portrait-frame');
+let tiltFrame = 0;
+function resetTilt() {
+  cancelAnimationFrame(tiltFrame);
+  portrait.style.removeProperty('--tilt-x');
+  portrait.style.removeProperty('--tilt-y');
+  portrait.style.removeProperty('--light-x');
+  portrait.style.removeProperty('--light-y');
+}
+portrait.addEventListener('pointermove', event => {
+  if (reducedMotion.matches || !finePointer.matches || event.pointerType === 'touch') return;
+  const rect = portrait.getBoundingClientRect();
+  const x = Math.max(0, Math.min(1, (event.clientX - rect.left) / rect.width));
+  const y = Math.max(0, Math.min(1, (event.clientY - rect.top) / rect.height));
+  cancelAnimationFrame(tiltFrame);
+  tiltFrame = requestAnimationFrame(() => {
+    portrait.style.setProperty('--tilt-x', `${(0.5 - y) * 9}deg`);
+    portrait.style.setProperty('--tilt-y', `${(x - 0.5) * 9}deg`);
+    portrait.style.setProperty('--light-x', `${x * 100}%`);
+    portrait.style.setProperty('--light-y', `${y * 100}%`);
+  });
+});
+portrait.addEventListener('pointerleave', resetTilt);
+portrait.addEventListener('pointercancel', resetTilt);
+finePointer.addEventListener('change', resetTilt);
+reducedMotion.addEventListener('change', () => {
+  resetTilt();
+  if (reducedMotion.matches) activeAnimations.forEach(animation => animation.cancel());
+});
+// Suspend ambient motion while the hero is outside the viewport or the tab is hidden.
+let heroVisible = true;
+function syncAmbientMotion() {
+  document.querySelector('.hero').classList.toggle('motion-paused', !heroVisible || document.hidden);
+}
+new IntersectionObserver(([entry]) => {
+  heroVisible = entry.isIntersecting;
+  syncAmbientMotion();
+}).observe(document.querySelector('.hero'));
+document.addEventListener('visibilitychange', syncAmbientMotion);

@@ -8,6 +8,7 @@ Recruiter-focused personal portfolio for Ahmed Sheref.
 - Featured TickTick case study with CV-recorded installs and rating, AI integrations, Telegram workflows, Azure VM, and GitHub Actions
 - Four project case studies using native dialogs with keyboard focus management
 - Mobile navigation, skip link, visible keyboard focus, and reduced-motion support
+- Floating portrait with pointer tilt, ambient hero lighting, one-time scroll reveals, and subtle hover feedback; ambient motion pauses offscreen and in hidden tabs
 - Direct email, LinkedIn, repository, demo, and updated local CV links
 - SEO, Open Graph, Twitter Card, JSON-LD, canonical URL, and SVG favicon
 

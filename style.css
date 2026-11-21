@@ -1132,6 +1132,143 @@ dialog::backdrop {
   }
 }
 
+/* Ambient light and a floating portrait bring the introduction to life. */
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: clip;
+}
+
+.hero::before, .hero::after {
+  content: '';
+  position: absolute;
+  pointer-events: none;
+  z-index: -1;
+  border-radius: 50%;
+  filter: blur(45px);
+}
+
+.hero::before {
+  width: min(600px, 80vw);
+  height: 550px;
+  right: -120px;
+  top: -160px;
+  background: radial-gradient(ellipse, #45bca622, transparent 68%);
+  animation: ambient-drift 14s ease-in-out infinite alternate;
+}
+
+.hero::after {
+  width: 450px;
+  height: 400px;
+  left: -160px;
+  bottom: -180px;
+  background: radial-gradient(ellipse, #5d84d521, transparent 70%);
+  animation: ambient-drift 18s ease-in-out -7s infinite alternate-reverse;
+}
+
+.hero-profile {
+  perspective: 1000px;
+}
+
+.portrait-frame {
+  border: 1px solid #7dd3c040;
+  box-shadow: 0 22px 65px #0005, 0 0 45px #7dd3c00b;
+  transform: rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
+  transition: transform 350ms ease-out, border-color 350ms, box-shadow 350ms;
+  animation: portrait-float 6s ease-in-out infinite;
+}
+
+.portrait-frame::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0;
+  background: radial-gradient(circle at var(--light-x, 50%) var(--light-y, 35%), #d7fff529, transparent 55%);
+  transition: opacity 300ms;
+}
+
+.hero h1 > span {
+  background: linear-gradient(110deg, #7dd3c0 20%, #c5f7ed 45%, #7dd3c0 65%, #7fb5de 90%);
+  background-size: 250% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: accent-shift 10s ease-in-out infinite alternate;
+}
+
+.code-mark {
+  animation: code-float 5s ease-in-out -2s infinite;
+}
+
+.motion-paused::before, .motion-paused::after,
+.motion-paused .portrait-frame, .motion-paused h1 > span,
+.motion-paused .code-mark {
+  animation-play-state: paused;
+}
+
+.project-card, .certificate-card {
+  transition: transform 300ms ease, border-color 300ms ease, box-shadow 300ms ease;
+}
+
+.skill-card {
+  transition: background 250ms ease;
+}
+
+.btn {
+  transition: transform 200ms ease, box-shadow 200ms ease, background 200ms ease, border-color 200ms ease;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+dialog[open] {
+  animation: dialog-enter 250ms ease-out;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .portrait-frame:hover {
+    border-color: #7dd3c080;
+    box-shadow: 0 28px 70px #0006, 0 0 55px #7dd3c017;
+  }
+  .portrait-frame:hover::before { opacity: 1; }
+  .project-card:hover, .certificate-card:hover {
+    transform: translateY(-6px);
+    border-color: #639687;
+    box-shadow: 0 18px 40px #0003;
+  }
+  .skill-card:hover { background: #7dd3c008; }
+  .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 24px #7dd3c015; }
+}
+
+@keyframes portrait-float {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -12px; }
+}
+@keyframes ambient-drift {
+  from { transform: translate(0, 0) scale(1); }
+  to { transform: translate(-55px, 40px) scale(1.12); }
+}
+@keyframes accent-shift {
+  from { background-position: 0% 50%; }
+  to { background-position: 100% 50%; }
+}
+@keyframes code-float {
+  0%, 100% { transform: translateY(0) rotate(-4deg); }
+  50% { transform: translateY(-5px) rotate(4deg); }
+}
+@keyframes dialog-enter {
+  from { opacity: 0; transform: translateY(12px) scale(.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@media (max-width: 760px) {
+  .portrait-frame { animation-duration: 7s; }
+  .hero::before, .hero::after { filter: blur(25px); }
+}
+
 @media(prefers-reduced-motion:reduce) {
   html {
     scroll-behavior:auto
@@ -1140,4 +1277,5 @@ dialog::backdrop {
     transition:none!important;
     animation:none!important
   }
+  .portrait-frame, .project-card, .certificate-card, .btn { transform: none !important; }
 }
